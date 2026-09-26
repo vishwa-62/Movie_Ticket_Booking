@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0b0e14;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism cards */
+.glass-panel {
+  background: rgba(18, 23, 34, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(27, 34, 50, 0.85);
+  border-color: rgba(244, 63, 94, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(244, 63, 94, 0.2);
+}
+
+/* Screen curve for cinema seat map */
+.cinema-screen-curve {
+  height: 24px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(244, 63, 94, 0.6) 0%, rgba(244, 63, 94, 0) 100%);
+  border-top: 4px solid #f43f5e;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow: 0 -10px 25px 2px rgba(244, 63, 94, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0e14;
+}
+::-webkit-scrollbar-thumb {
+  background: #252e42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48;
+}
+
+/* Shimmer Loading Animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-loading {
+  background: linear-gradient(90deg, #121722 25%, #252e42 50%, #121722 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
